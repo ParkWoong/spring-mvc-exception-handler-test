@@ -36,6 +36,10 @@ mvn spring-boot:run
 
 Try `GET /sample/bad` and `GET /sample/fail`. The test checks HTTP 400/500 and the JSON error fields.
 
+#### Postman API
+
+Call GET http://localhost:8080/sample/bad with no body. Expected: HTTP 400 and JSON containing error: "Request Error", errorCode: "API400", and message.errorMessage: "Invalid sample". GET /sample/fail returns HTTP 500 with a generic message.
+
 ## KR
 
 ### 프로젝트 구조
@@ -69,3 +73,7 @@ mvn spring-boot:run
 ```
 
 `GET /sample/bad`, `GET /sample/fail`을 호출하세요. 테스트는 HTTP 400/500과 JSON 오류 필드를 확인합니다.
+
+#### Postman API
+
+본문 없이 GET http://localhost:8080/sample/bad을 호출하세요. 예상 결과: HTTP 400과 error: "Request Error", errorCode: "API400", message.errorMessage: "Invalid sample"이 담긴 JSON입니다. GET /sample/fail은 일반화된 메시지와 HTTP 500을 반환합니다.
